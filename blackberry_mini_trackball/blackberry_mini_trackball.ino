@@ -53,9 +53,9 @@ private:
 
 // button and debounce
 int btn_state;
-int btn_last_state;
+int btn_read_state;
+unsigned long btn_current_action_time;
 unsigned long btn_last_action_time;
-unsigned long current_time;
 
 // mouse move
 int x_move, y_move;
@@ -71,11 +71,12 @@ void setup() {
 }
 
 void loop() {
-  current_time = millis();
-  if(current_time - btn_last_action_time > bounce_interval) {
-    btn_state = digitalRead(btn_pin);
-    btn_last_action_time = current_time;
-    if(btn_state != btn_last_state) {
+  btn_read_state = digitalRead(btn_pin);
+  if(btn_read_state != btn_state) {
+    btn_current_action_time = millis();
+    if(btn_current_action_time - btn_last_action_time > bounce_interval) {
+      btn_state = btn_read_state;
+      btn_last_action_time = btn_current_action_time;
       if(btn_state == HIGH) {
         digitalWrite(white_led_pin, HIGH);
         Mouse.release();
@@ -83,7 +84,6 @@ void loop() {
         digitalWrite(white_led_pin, LOW);
         Mouse.press();
       }
-      btn_last_state = btn_state;
     }
   }
 
