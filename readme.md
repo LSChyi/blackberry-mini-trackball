@@ -34,4 +34,4 @@ This module also contains resisters, so to to ligth the LED on the board, simple
 ## Mouse Move
 I made a design to make the mouse move more confortable, which is learn from the touchpad on macbook.
 
-If you scroll slowly, the mouse is also move slowly, but if you scroll very hard, the mouse will move with an nonlinear, longer distance. You can check this feature in demo video.
+If you scroll slowly, the mouse is also move slowly, but if you scroll very hard, the mouse will move with an nonlinear, longer distance. You can check this feature in [demo video](https://www.youtube.com/watch?v=pNDsID4fOzs).
