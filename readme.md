@@ -1,6 +1,5 @@
 # Blackberry Mini Trackball
 This project is to demo how to use blackberry mini trackball.
-![](img/index.jpg)
 
 ### [Demo Video](https://www.youtube.com/watch?v=pNDsID4fOzs)
 ![](img/demo_video.png)
